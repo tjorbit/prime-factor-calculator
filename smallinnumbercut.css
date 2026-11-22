@@ -1,0 +1,375 @@
+
+/* =================================
+   기본 설정
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080f1e;
+    color: #f8fafc;
+    font-family: Arial, sans-serif;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    font-size: 38px;
+    color: #60a5fa;
+    letter-spacing: 3px;
+}
+
+header p {
+    color: #94a3b8;
+    margin-top: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+section {
+    background: #172338;
+    border: 1px solid #26364e;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+section h2 {
+    font-size: 21px;
+    margin-bottom: 20px;
+    color: #e2e8f0;
+}
+
+/* =================================
+   입력창
+================================= */
+
+input {
+    width: 100%;
+    padding: 15px;
+    background: #0f192b;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 12px;
+}
+
+input:focus {
+    border-color: #60a5fa;
+}
+
+/* =================================
+   버튼
+================================= */
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
+}
+
+.copy-btn {
+    width: auto;
+    padding: 10px 18px;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+/* =================================
+   분해 결과
+================================= */
+
+#factorResult {
+    background: #0f192b;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    font-size: 25px;
+    color: #60a5fa;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+/* =================================
+   계산 과정
+================================= */
+
+#stepsResult {
+    background: #0f192b;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.step-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #26364e;
+    color: #cbd5e1;
+}
+
+.step-item:last-child {
+    border-bottom: none;
+}
+
+/* =================================
+   소수 판별
+================================= */
+
+#primeResult {
+    background: #0f192b;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+}
+
+.prime-yes {
+    color: #4ade80;
+}
+
+.prime-no {
+    color: #fbbf24;
+}
+
+.prime-icon {
+    display: inline-flex;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(74, 222, 128, 0.12);
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.prime-no .prime-icon {
+    background: rgba(251, 191, 36, 0.12);
+}
+
+#primeResult h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+#primeResult p {
+    color: #cbd5e1;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* =================================
+   소인수분해 트리
+================================= */
+
+#treeResult {
+    background: #0f192b;
+    border-radius: 12px;
+    padding: 25px 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.svg-tree {
+    display: flex;
+    justify-content: center;
+    min-width: max-content;
+    padding: 15px;
+}
+
+.svg-tree svg {
+    display: block;
+    overflow: visible;
+    max-width: none;
+}
+
+.svg-tree line {
+    stroke: #60a5fa;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: drawLine 0.7s ease forwards;
+}
+
+.svg-tree svg g {
+    opacity: 0;
+    animation: treeAppear 0.45s ease forwards;
+}
+
+@keyframes treeAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* =================================
+   최대공약수 · 최소공배수
+================================= */
+
+.number-inputs {
+    display: flex;
+    gap: 12px;
+}
+
+.number-inputs input {
+    min-width: 0;
+    flex: 1;
+}
+
+.math-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f192b;
+    border: 1px solid #26364e;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 12px;
+}
+
+.math-result span {
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+.math-result strong {
+    color: #60a5fa;
+    font-size: 25px;
+}
+
+/* =================================
+   약수 계산기
+================================= */
+
+#divisorResult {
+    background: #0f192b;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 18px;
+    color: #cbd5e1;
+}
+
+.divisor-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 15px 0;
+}
+
+.divisor-item {
+    background: #1e3a5f;
+    color: #93c5fd;
+    border: 1px solid #2563eb;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.divisor-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid #26364e;
+}
+
+.divisor-info strong {
+    color: #60a5fa;
+}
+
+.divisor-copy {
+    margin-top: 15px;
+}
+
+/* =================================
+   푸터
+================================= */
+
+footer {
+    text-align: center;
+    color: #64748b;
+    margin-top: 35px;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* =================================
+   모바일
+================================= */
+
+@media (max-width: 500px) {
+
+    header h1 {
+        font-size: 29px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .number-inputs {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .math-result {
+        gap: 10px;
+    }
+
+    .math-result strong {
+        font-size: 21px;
+    }
+}
+
+/* 움직임 줄이기 설정 */
+
+@media (prefers-reduced-motion: reduce) {
+    .svg-tree svg g,
+    .svg-tree svg line {
+        animation: none;
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

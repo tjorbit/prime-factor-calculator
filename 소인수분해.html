@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Factor Calculator</title>
+    <link rel="stylesheet" href="smallinnumbercut.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>PRIME FACTOR</h1>
+        <p>소인수분해 계산기</p>
+    </header>
+
+    <main>
+
+        <!-- 소인수분해 -->
+        <section class="calculator">
+            <h2>숫자 입력</h2>
+
+            <input type="number" id="numberInput"
+                placeholder="숫자를 입력하세요" min="2">
+
+            <button onclick="factorize()">
+                소인수분해 시작
+            </button>
+        </section>
+
+        <!-- 분해 결과 -->
+        <section class="result">
+            <h2>분해 결과</h2>
+            <div id="factorResult">
+                <p>숫자를 입력하고 계산을 시작하세요.</p>
+            </div>
+        </section>
+
+        <!-- 소수 판별 -->
+        <section class="prime-check">
+            <h2>소수 판별 결과</h2>
+            <div id="primeResult">
+                숫자를 입력하면 소수 여부를 판별합니다.
+            </div>
+        </section>
+
+        <!-- 계산 과정 -->
+        <section class="steps">
+            <h2>계산 과정</h2>
+            <div id="stepsResult">
+                계산 과정이 여기에 표시됩니다.
+            </div>
+        </section>
+
+        <!-- 소인수분해 트리 -->
+        <section class="tree">
+            <h2>소인수분해 트리</h2>
+            <div id="treeResult">
+                소인수분해 트리가 여기에 표시됩니다.
+            </div>
+        </section>
+
+        <!-- 최대공약수 최소공배수 -->
+        <section class="gcd-lcm">
+            <h2>최대공약수 · 최소공배수</h2>
+
+            <div class="number-inputs">
+                <input type="number" id="numA"
+                    placeholder="첫 번째 숫자" min="1">
+
+                <input type="number" id="numB"
+                    placeholder="두 번째 숫자" min="1">
+            </div>
+
+            <button onclick="calculateGCDLCM()">
+                계산하기
+            </button>
+
+            <div id="gcdResult">
+                최대공약수가 여기에 표시됩니다.
+            </div>
+
+            <div id="lcmResult">
+                최소공배수가 여기에 표시됩니다.
+            </div>
+        </section>
+
+        <!-- 약수 계산기 -->
+        <section class="divisors">
+            <h2>약수 계산기</h2>
+
+            <input type="number" id="divisorInput"
+                placeholder="숫자를 입력하세요" min="1">
+
+            <button onclick="calculateDivisors()">
+                약수 구하기
+            </button>
+
+            <div id="divisorResult">
+                약수 결과가 여기에 표시됩니다.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        PRIME FACTOR CALCULATOR
+    </footer>
+
+</div>
+
+<script src="soinsubunha.js"></script>
+
+</body>
+</html>
